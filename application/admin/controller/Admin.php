@@ -10,7 +10,14 @@ class Admin
 
      public function add()
     {
+      if(requst()->isPost()){
+        $res=db('admin')->insert(input('post.'));
+        dump(data);die;
+        return;
+      }
+
        return view();
+      }
     }
 
     public function edit()
