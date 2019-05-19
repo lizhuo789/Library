@@ -37,7 +37,7 @@ class Cate extends Model
         return $this->_getchilrenid($cateres,$cateid);
     }
 
-    public function _getchilrenid($authRuleId,$cateid){
+    public function _getchilrenid($cateres,$cateid){
         static $arr=array();
         foreach ($cateres as $k => $v) {
             if($v['pid'] == $cateid){
