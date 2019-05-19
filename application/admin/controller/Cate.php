@@ -12,7 +12,7 @@ class cate extends Common
     {
         
         $cate=new CateModel();
-        if(request()->isPost()){
+         if(request()->isPost()){
             $sorts=input('post.');
             foreach ($sorts as $k => $v) {
                 $cate->update(['id'=>$k,'sort'=>$v]);
