@@ -178,3 +178,18 @@
 
 4.数据处理(save)
 
+
+
+### 十二. 配置表创建及模板处理
+
+1. 创建配置表(配置相关值)
+
+   id-cnname-enname-type-value-values
+
+2. 建立数据表conf(各个建立好)
+
+3. 在link中载入界面
+
+   list-add-edit
+
+4.配置中相关修改
