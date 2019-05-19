@@ -193,3 +193,23 @@
    list-add-edit
 
 4.配置中相关修改
+
+### 十三. Auth权限认证—用户组添加与显示
+
+1. 在用户组添加数据
+
+   id-title-status-rules(权限id)
+
+2. 用户界面
+
+   ①搭建
+
+   标题-地址-状态
+
+3. 在admin添加
+
+   接受数据input
+
+4.  分页
+
+   {”authGroup->render()“}
