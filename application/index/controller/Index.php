@@ -1,10 +1,30 @@
 <?php
 namespace app\index\controller;
 
-class Index
+class Index extends Common
 {
     public function index()
     {
+<<<<<<< HEAD
+=======
+    	//首页最新文章调用
+    	$articleM=new \app\index\model\Article();
+    	$newArtiecleRes=$articleM->getNewArticle();
+        $siteHotArt=$articleM->getSiteHot();
+        $recArt=$articleM->getRecArt();
+        //获取推荐栏目
+        $cateM=new \app\index\model\Cate();
+        $recIndex=$cateM->getRecIndex();
+        //友情链接数据
+        $linkRes=db('link')->order('sort desc')->select();
+    	$this->assign(array(
+    		'newArtiecleRes'=>$newArtiecleRes,
+            'siteHotArt'=>$siteHotArt,
+            'linkRes'=>$linkRes,
+            'recArt'=>$recArt,
+            'recIndex'=>$recIndex,
+    		));
+>>>>>>> 81b452689bf3da775bb1fbfa9c93c9abeba16d20
         return view();
     }
 }

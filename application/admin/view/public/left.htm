@@ -9,18 +9,48 @@
                 <!-- Sidebar Menu -->
                 <ul class="nav sidebar-menu">
                     <!--Dashboard-->
-                    
                     <li>
                         <a href="#" class="menu-dropdown">
                             <i class="menu-icon fa fa-user"></i>
-                            <span class="menu-text">一管理员</span>
+                            <span class="menu-text">管理员</span>
                             <i class="menu-expand"></i>
                         </a>
                         <ul class="submenu">
                             <li>
-                                <a href="/admin/document/index.html">
+                                <a href="{:url('admin/lst')}">
                                     <span class="menu-text">
                                         管理列表                                    </span>
+                                    <i class="menu-expand"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{:url('auth_group/lst')}">
+                                    <span class="menu-text">
+                                        用户组列表                                    </span>
+                                    <i class="menu-expand"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{:url('auth_rule/lst')}">
+                                    <span class="menu-text">
+                                        权限列表                                   </span>
+                                    <i class="menu-expand"></i>
+                                </a>
+                            </li>
+                        </ul>                            
+                    </li> 
+
+                    <li>
+                        <a href="#" class="menu-dropdown">
+                            <i class="menu-icon fa fa-folder"></i>
+                            <span class="menu-text">栏目管理</span>
+                            <i class="menu-expand"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li>
+                                <a href="{:url('cate/lst')}">
+                                    <span class="menu-text">
+                                        栏目列表                                    </span>
                                     <i class="menu-expand"></i>
                                 </a>
                             </li>
@@ -30,14 +60,31 @@
                     <li>
                         <a href="#" class="menu-dropdown">
                             <i class="menu-icon fa fa-file-text"></i>
-                            <span class="menu-text">文档</span>
+                            <span class="menu-text">文章管理</span>
                             <i class="menu-expand"></i>
                         </a>
                         <ul class="submenu">
                             <li>
-                                <a href="/admin/document/index.html">
+                                <a href="{:url('article/lst')}">
                                     <span class="menu-text">
                                         文章列表                                    </span>
+                                    <i class="menu-expand"></i>
+                                </a>
+                            </li>
+                        </ul>                            
+                    </li> 
+
+                    <li>
+                        <a href="#" class="menu-dropdown">
+                            <i class="menu-icon fa fa-chain"></i>
+                            <span class="menu-text">友情连接</span>
+                            <i class="menu-expand"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li>
+                                <a href="{:url('link/lst')}">
+                                    <span class="menu-text">
+                                        链接列表                                    </span>
                                     <i class="menu-expand"></i>
                                 </a>
                             </li>
@@ -52,9 +99,16 @@
                         </a>
                         <ul class="submenu">
                             <li>
-                                <a href="/admin/document/index.html">
+                                <a href="{:url('Conf/conf')}">
                                     <span class="menu-text">
-                                        配置                                   </span>
+                                        配置项                               </span>
+                                    <i class="menu-expand"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{:url('Conf/lst')}">
+                                    <span class="menu-text">
+                                        配置列表                                   </span>
                                     <i class="menu-expand"></i>
                                 </a>
                             </li>

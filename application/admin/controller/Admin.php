@@ -26,6 +26,7 @@ class Admin extends Common
             if(!$validate->scene('add')->check($data)){
                 $this->error($validate->getError());
             }
+<<<<<<< HEAD
             $admin=new AdminModel();
             if($admin->addadmin($data)){
                 $this->success('添加管理员成功！',url('lst'));
@@ -33,6 +34,9 @@ class Admin extends Common
                 $this->error('添加管理员失败！');
             }
             return;
+=======
+            
+>>>>>>> 81b452689bf3da775bb1fbfa9c93c9abeba16d20
         }
         $authGroupRes=db('auth_group')->select();
         $this->assign('authGroupRes',$authGroupRes);
@@ -42,6 +46,53 @@ class Admin extends Common
   public function edit($id)
     {
         $admins=db('admin')->find($id);
+<<<<<<< HEAD
+=======
+
+        if(request()->isPost()){
+            $data=input('post.');
+            $validate = \think\Loader::validate('Admin');
+            if(!$validate->scene('edit')->check($data)){
+                $this->error($validate->getError());
+            }
+            $admin=new AdminModel();
+            $savenum=$admin->saveadmin($data,$admins);
+            if($savenum == '2'){
+                $this->error('评测
+                    ！');
+            }
+            if($savenum !== false){
+                $this->success('修改成功！',url('lst'));
+            }else{
+                $this->error('首页！');
+            }
+            return;
+        }
+        
+        if(!$admins){
+            $this->error('图集');
+        }
+        $authGroupAccess=db('auth_group_access')->where(array('uid'=>$id))->find();
+        $authGroupRes=db('auth_group')->select();
+        $this->assign('authGroupRes',$authGroupRes);
+        $this->assign('admin',$admins);
+        $this->assign('groupId',$authGroupAccess['group_id']);
+        return view();
+  }
+
+    
+
+    public function logout(){
+        session(null); 
+        $this->success('自行车视频专题！',url('login/index'));
+    }
+
+
+
+
+
+
+>>>>>>> 81b452689bf3da775bb1fbfa9c93c9abeba16d20
 
         if(request()->isPost()){
             $data=input('post.');
@@ -89,5 +140,7 @@ class Admin extends Common
     }
 
 }
+
+
 
 }

@@ -36,11 +36,15 @@ class Admin extends Model
         if(!$data['name']){
             return 2;//管理员用户名为空
         }
+<<<<<<< HEAD
         if(!$data['password']){
             $data['password']=$admins['password'];
         }else{
             $data['password']=md5($data['password']);
         }
+=======
+        
+>>>>>>> 81b452689bf3da775bb1fbfa9c93c9abeba16d20
         db('auth_group_access')->where(array('uid'=>$data['id']))->update(['group_id'=>$data['group_id']]);
         return $this::update(['name'=>$data['name'],'password'=>$data['password']],['id'=>$data['id']]);
     
