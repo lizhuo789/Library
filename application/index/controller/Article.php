@@ -1,5 +1,14 @@
 <?php
 namespace app\index\controller;
+<<<<<<< HEAD
+
+class Article
+{
+    public function index()
+    {
+        return view('article');
+    }
+=======
 use think\Request;
 class Article extends Common
 {
@@ -18,4 +27,5 @@ class Article extends Common
         return view('article');
     }
 
+>>>>>>> 81b452689bf3da775bb1fbfa9c93c9abeba16d20
 }

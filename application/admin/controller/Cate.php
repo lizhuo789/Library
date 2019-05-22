@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+s<?php
+=======
 <?php
+>>>>>>> 81b452689bf3da775bb1fbfa9c93c9abeba16d20
 namespace app\admin\controller;
 use app\admin\model\Cate as CateModel;
 use app\admin\model\Article as ArticleModel;
@@ -6,13 +10,26 @@ use app\admin\controller\Common;
 class cate extends Common
 {
 
+<<<<<<< HEAD
+    protected $beforeActionList = [
+        // 'first',
+        // 'second' =>  ['except'=>'hello'],
+        'delsoncate'  =>  ['only'=>'del'],
+    ];
+
+=======
    
+>>>>>>> 81b452689bf3da775bb1fbfa9c93c9abeba16d20
 
     public function lst()
     {
         
         $cate=new CateModel();
+<<<<<<< HEAD
+        if(request()->isPost()){
+=======
          if(request()->isPost()){
+>>>>>>> 81b452689bf3da775bb1fbfa9c93c9abeba16d20
             $sorts=input('post.');
             foreach ($sorts as $k => $v) {
                 $cate->update(['id'=>$k,'sort'=>$v]);

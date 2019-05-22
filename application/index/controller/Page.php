@@ -1,6 +1,12 @@
 <?php
 namespace app\index\controller;
 
+<<<<<<< HEAD
+class Page
+{
+    public function index()
+    {
+=======
 class Page extends Common
 {
     public function index()
@@ -12,6 +18,7 @@ class Page extends Common
     		'cates'=>$cates,
     		'cateInfo'=>$cateInfo,
     		));
+>>>>>>> 81b452689bf3da775bb1fbfa9c93c9abeba16d20
         return view('page');
     }
 }

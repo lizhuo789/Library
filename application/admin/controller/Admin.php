@@ -26,7 +26,17 @@ class Admin extends Common
             if(!$validate->scene('add')->check($data)){
                 $this->error($validate->getError());
             }
+<<<<<<< HEAD
+            $admin=new AdminModel();
+            if($admin->addadmin($data)){
+                $this->success('添加管理员成功！',url('lst'));
+            }else{
+                $this->error('添加管理员失败！');
+            }
+            return;
+=======
             
+>>>>>>> 81b452689bf3da775bb1fbfa9c93c9abeba16d20
         }
         $authGroupRes=db('auth_group')->select();
         $this->assign('authGroupRes',$authGroupRes);
@@ -36,6 +46,8 @@ class Admin extends Common
   public function edit($id)
     {
         $admins=db('admin')->find($id);
+<<<<<<< HEAD
+=======
 
         if(request()->isPost()){
             $data=input('post.');
@@ -80,10 +92,54 @@ class Admin extends Common
 
 
 
+>>>>>>> 81b452689bf3da775bb1fbfa9c93c9abeba16d20
 
+        if(request()->isPost()){
+            $data=input('post.');
+            $validate = \think\Loader::validate('Admin');
+            if(!$validate->scene('edit')->check($data)){
+                $this->error($validate->getError());
+            }
+            $admin=new AdminModel();
+            $savenum=$admin->saveadmin($data,$admins);
+            if($savenum == '2'){
+                $this->error('管理员用户名不得为空！');
+            }
+            if($savenum !== false){
+                $this->success('修改成功！',url('lst'));
+            }else{
+                $this->error('修改失败！');
+            }
+            return;
+        }
+        
+        if(!$admins){
+            $this->error('该管理员不存在');
+        }
+        $authGroupAccess=db('auth_group_access')->where(array('uid'=>$id))->find();
+        $authGroupRes=db('auth_group')->select();
+        $this->assign('authGroupRes',$authGroupRes);
+        $this->assign('admin',$admins);
+        $this->assign('groupId',$authGroupAccess['group_id']);
+        return view();
+  }
 
+    public function del($id){
+        $admin=new AdminModel();
+        $delnum=$admin->deladmin($id);
+        if($delnum == '1'){
+            $this->success('删除管理员成功！',url('lst'));
+        }else{
+            $this->error('删除管理员失败！');
+        }
+    }
 
+    public function logout(){
+        session(null); 
+        $this->success('退出系统成功！',url('login/index'));
+    }
 
+}
 
 
 

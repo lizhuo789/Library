@@ -1,5 +1,12 @@
 <?php
 namespace app\index\controller;
+<<<<<<< HEAD
+
+class Artlist
+{
+    public function index()
+    {
+=======
 use app\index\model\Article;
 class Artlist extends Common
 {
@@ -16,6 +23,7 @@ class Artlist extends Common
     		'hotRes'=>$hotRes,
             'cateInfo'=>$cateInfo,
     		));
+>>>>>>> 81b452689bf3da775bb1fbfa9c93c9abeba16d20
         return view('artlist');
     }
 }

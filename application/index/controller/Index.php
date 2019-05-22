@@ -5,6 +5,8 @@ class Index extends Common
 {
     public function index()
     {
+<<<<<<< HEAD
+=======
     	//首页最新文章调用
     	$articleM=new \app\index\model\Article();
     	$newArtiecleRes=$articleM->getNewArticle();
@@ -22,6 +24,7 @@ class Index extends Common
             'recArt'=>$recArt,
             'recIndex'=>$recIndex,
     		));
+>>>>>>> 81b452689bf3da775bb1fbfa9c93c9abeba16d20
         return view();
     }
 }
